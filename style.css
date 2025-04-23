@@ -45,6 +45,10 @@ a {
     color: var(--accent-gold);
 }
 
+a:hover {
+    text-decoration: underline; /* Optional: underline links on hover */
+}
+
 img { /* Placeholder - If you add images later */
     max-width: 100%;
     height: auto;
@@ -64,14 +68,14 @@ section {
 /* --- Header & Hero Section --- */
 .hero {
     background-color: var(--pastel-peach); /* Pastel Peach Background */
-    min-height: 90vh;
+    min-height: 90vh; /* Adjusted height slightly */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 40px 20px;
-    position: relative; /* For potential future background image layering */
+    position: relative;
     border-bottom: 5px solid var(--accent-gold);
 }
 
@@ -100,7 +104,7 @@ section {
 .cta-button {
     display: inline-block;
     background-color: var(--accent-gold);
-    color: var(--white);
+    color: var(--white) !important; /* Use !important to ensure white text */
     padding: 15px 35px;
     font-size: 1.1rem;
     font-weight: 700;
@@ -109,12 +113,16 @@ section {
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-decoration: none !important; /* Ensure no underline */
+    border: none; /* Ensure no default border */
+    cursor: pointer;
 }
 
 .cta-button:hover {
     background-color: #b38e52; /* Darker gold */
     transform: translateY(-3px);
-     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    text-decoration: none !important; /* Ensure no underline on hover */
 }
 
 /* --- Intro Section --- */
@@ -184,12 +192,6 @@ section {
      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.service-list i { /* Placeholder if you want icons later */
-    margin-right: 10px;
-    color: var(--accent-gold);
-}
-
-
 /* --- Facilities Section --- */
 .facilities {
     background-color: var(--light-grey); /* Light neutral background */
@@ -228,7 +230,6 @@ section {
     margin-bottom: 0;
 }
 
-
 /* --- Call to Action Section --- */
 .final-cta {
     background-color: var(--pastel-peach); /* Repeat Hero Background */
@@ -254,7 +255,15 @@ section {
      margin-right: auto;
      line-height: 1.8;
 }
-
+/* Style the phone link specifically in the address */
+.location p a {
+    color: var(--accent-gold); /* Inherit main link color */
+    font-weight: 600; /* Make phone number slightly bolder */
+    text-decoration: none; /* Remove underline by default */
+}
+.location p a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
 
 /* --- Footer --- */
 footer {
@@ -266,16 +275,43 @@ footer {
 }
 
 footer p {
-    margin-bottom: 0;
+    margin-bottom: 0.5em; /* Added small margin below copyright */
     font-size: 0.9rem;
 }
- footer a {
+ footer a { /* Default style for any OTHER potential links in footer */
      color: var(--pastel-peach);
      text-decoration: underline;
  }
  footer a:hover {
      color: var(--white);
  }
+
+ /* --- Instagram Link Styling in Footer --- */
+.social-links {
+    margin-top: 15px; /* Space above the icon */
+}
+
+.social-links a {
+    display: inline-block; /* Needed for transform and size */
+    color: var(--pastel-green); /* Instagram Icon Color */
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none !important; /* Ensure no underline on icon link */
+    line-height: 0; /* Helps with alignment potentially */
+}
+
+.social-links a svg {
+    width: 32px; /* Instagram Icon size */
+    height: 32px; /* Instagram Icon size */
+    vertical-align: middle; /* Helps align the icon */
+    fill: currentColor; /* Make SVG use the 'color' property set on the link */
+}
+
+.social-links a:hover {
+    color: var(--white); /* Instagram Icon color on hover */
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+    text-decoration: none !important; /* Still no underline on hover */
+}
+
 
 /* --- Responsiveness --- */
 @media (max-width: 768px) {
@@ -307,4 +343,8 @@ footer p {
      h1 { font-size: 2rem; }
      .hero h1 { font-size: 2.5rem;}
      .hero .sub-heading { font-size: 1.2rem; }
+     .hero { min-height: 75vh; } /* Slightly less tall on mobile */
+     .cta-button { padding: 12px 25px; font-size: 0.95rem; } /* Slightly smaller */
+     .location p { font-size: 1rem; } /* Adjust address font size */
+     .social-links a svg { width: 28px; height: 28px; } /* Slightly smaller icon on mobile */
 }
