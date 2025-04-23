@@ -1,0 +1,310 @@
+/* --- Import Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap');
+
+/* --- Color Palette --- */
+:root {
+    --pastel-green: #D8E2DC; /* Soft Sage Green */
+    --pastel-peach: #FFE5D9; /* Warm Peach/Cream */
+    --dark-text: #4B4B4B; /* Dark Grey for text */
+    --accent-gold: #C6A969; /* Subtle Gold for accents */
+    --white: #FFFFFF;
+    --light-grey: #F8F8F8;
+}
+
+/* --- Global Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--white);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+h1 { font-size: 3rem; margin-bottom: 0.5em; text-align: center;}
+h2 { font-size: 2.2rem; margin-bottom: 1em; color: var(--accent-gold); text-align: center;}
+h3 { font-size: 1.5rem; margin-bottom: 0.7em; color: var(--dark-text); }
+p { margin-bottom: 1em; font-size: 1rem; line-height: 1.7; }
+
+a {
+    text-decoration: none;
+    color: var(--accent-gold);
+}
+
+img { /* Placeholder - If you add images later */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* --- Header & Hero Section --- */
+.hero {
+    background-color: var(--pastel-peach); /* Pastel Peach Background */
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative; /* For potential future background image layering */
+    border-bottom: 5px solid var(--accent-gold);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.hero .sub-heading {
+     font-family: 'Playfair Display', serif;
+     font-style: italic;
+     font-size: 1.8rem;
+     color: var(--dark-text);
+     margin-bottom: 1em;
+}
+
+
+.hero p.tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2em;
+    max-width: 600px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--white);
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px; /* Rounded pill shape */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #b38e52; /* Darker gold */
+    transform: translateY(-3px);
+     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* --- Intro Section --- */
+.intro {
+    background-color: var(--white);
+    text-align: center;
+}
+
+.intro-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    margin-bottom: 1.5em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0 20px;
+}
+.intro-quote::before,
+.intro-quote::after {
+    content: '"';
+    font-size: 3rem;
+    color: var(--pastel-green); /* Use the other pastel for quote marks */
+    position: absolute;
+    top: -0.2em;
+}
+.intro-quote::before { left: -10px; }
+.intro-quote::after { right: -10px; }
+
+/* --- Services Section --- */
+.services {
+    background-color: var(--pastel-green); /* Pastel Green Background */
+}
+
+.services .container {
+    max-width: 900px; /* Slightly narrower for focused list */
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    columns: 2; /* Create two columns for the list */
+   -webkit-columns: 2;
+   -moz-columns: 2;
+   column-gap: 40px;
+}
+
+.service-list li {
+    margin-bottom: 1em;
+    font-size: 1.1rem;
+    background: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block; /* Prevents list items breaking across columns */
+    width: 100%; /* Ensure items take full width of their column */
+    text-align: left;
+     border-left: 5px solid var(--pastel-peach); /* Accent border */
+}
+
+.service-list li:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-list i { /* Placeholder if you want icons later */
+    margin-right: 10px;
+    color: var(--accent-gold);
+}
+
+
+/* --- Facilities Section --- */
+.facilities {
+    background-color: var(--light-grey); /* Light neutral background */
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.facility-item {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    border-top: 4px solid var(--pastel-peach); /* Top Accent */
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ .facility-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.facility-item h3 {
+    color: var(--accent-gold);
+    margin-bottom: 0.5em;
+    font-size: 1.3rem;
+}
+
+.facility-item p {
+    font-size: 1rem;
+    color: var(--dark-text);
+    margin-bottom: 0;
+}
+
+
+/* --- Call to Action Section --- */
+.final-cta {
+    background-color: var(--pastel-peach); /* Repeat Hero Background */
+    text-align: center;
+     border-top: 5px solid var(--accent-gold);
+}
+ .final-cta h2 {
+    margin-bottom: 0.8em;
+ }
+
+/* --- Location Section --- */
+.location {
+    background-color: var(--white);
+    text-align: center;
+}
+ .location h2 {
+     margin-bottom: 0.8em;
+ }
+.location p {
+     font-size: 1.1rem;
+     max-width: 500px;
+     margin-left: auto;
+     margin-right: auto;
+     line-height: 1.8;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--dark-text);
+    color: var(--light-grey);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 0; /* Remove potential gap before footer */
+}
+
+footer p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+ footer a {
+     color: var(--pastel-peach);
+     text-decoration: underline;
+ }
+ footer a:hover {
+     color: var(--white);
+ }
+
+/* --- Responsiveness --- */
+@media (max-width: 768px) {
+     h1 { font-size: 2.5rem; }
+     .hero h1 { font-size: 3rem;}
+     .hero .sub-heading { font-size: 1.5rem; }
+     h2 { font-size: 1.8rem;}
+
+     .service-list {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+    }
+
+     .facility-grid {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+     }
+
+      .intro-quote { font-size: 1.2rem; }
+     .intro-quote::before, .intro-quote::after { font-size: 2.5rem; }
+
+     .cta-button {
+         padding: 12px 30px;
+         font-size: 1rem;
+     }
+}
+
+@media (max-width: 480px) {
+     h1 { font-size: 2rem; }
+     .hero h1 { font-size: 2.5rem;}
+     .hero .sub-heading { font-size: 1.2rem; }
+}
