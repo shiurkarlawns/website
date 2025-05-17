@@ -98,7 +98,7 @@ a:hover {
     margin-bottom: 15px;
 }
 
-.hero .sub-heading { /* This class was in your original CSS but not used in HTML, keeping it for now */
+.hero .sub-heading {
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 0.8em;
@@ -138,55 +138,54 @@ a:hover {
     transform: translateY(-3px);
     box-shadow: var(--strong-shadow);
 }
-
-/* --- Image Scroller Section (UPDATED) --- */
 .image-scroller-section {
-    background-color: var(--white); /* Or var(--pastel-secondary) if you prefer */
-    padding: 60px 0; /* Adjust vertical padding as needed */
-    overflow: hidden; /* Crucial to hide the parts of the track outside the viewport */
+    background-color: var(--white);
+    height: 450px; /* Increased height for more image visibility */
+    padding: 0;
+    overflow: hidden;
+    position: relative;
 }
 
 .scroller-container {
     width: 100%;
-    max-width: none; /* Allow the scroller to be wider than the page content container if necessary */
-    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
-/* Desktop image settings: width: 400px, margin-right: 20px. Total space per image: 420px */
 .image-track {
     display: flex;
-    /* (Image Width + Margin) * Number of TOTAL Images (7 Originals + 7 Duplicates = 14) */
-    width: calc((400px + 20px) * 14);
-    animation: scroll 60s linear infinite; /* Adjust 60s to control speed */
+    animation: scroll-left 80s linear infinite;
+    width: max-content; /* Adjusts to the combined width of images */
 }
 
 .image-track img {
-    width: 400px;   /* Desired width of each image on desktop */
-    height: 300px;  /* Desired height of each image on desktop */
-    object-fit: cover; /* Ensures images cover the area without distortion */
-    margin-right: 20px; /* Space between images */
+    width: 550px;
+    height: 400px;
+    object-fit: cover;
+    margin-right: 20px;
     border-radius: 10px;
     box-shadow: var(--light-shadow);
     transition: transform 0.3s ease;
 }
 
 .image-track img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
 }
 
-@keyframes scroll {
+/* Reverse direction (left to right): Optional - only if you want RTL scroll */
+@keyframes scroll-left {
     0% {
-        transform: translateX(0);
+        transform: translateX(0%);
     }
     100% {
-        /* -(Image Width + Margin) * Number of ORIGINAL Images (7) */
-        transform: translateX(calc(-(400px + 20px) * 7));
+        transform: translateX(-50%); /* Adjust depending on how many images you have */
     }
 }
 
 .scroller-container:hover .image-track {
-    animation-play-state: paused; /* Pause scroll on hover over the container */
+    animation-play-state: paused;
 }
+
 
 
 /* --- Introduction Section --- */
@@ -361,17 +360,16 @@ footer .container {
         grid-template-columns: 1fr;
     }
 
-    /* Tablet image size: 300px width, 220px height. Margin: 20px. Total per image: 320px */
+    /* Tablet image size: 420px width, 290px height. Margin: 20px. Total per image: 440px */
     .image-track {
         /* (Tablet Image Width + Margin) * Number of TOTAL Images (14) */
-        width: calc((300px + 20px) * 14);
+        width: calc((420px + 20px) * 14); /* MODIFIED */
         /* Note: @keyframes scroll animation distance is still based on desktop image sizes.
-           For a continuous scroll, this is usually acceptable.
-           If precise reset based on resized images is needed, more complex CSS/JS would be required. */
+           For a continuous scroll, this is usually acceptable. */
     }
     .image-track img {
-        width: 300px;
-        height: 220px;
+        width: 420px;   /* MODIFIED */
+        height: 290px;  /* MODIFIED */
     }
 }
 
@@ -397,14 +395,14 @@ footer .container {
         font-size: 1.1rem;
     }
 
-    /* Mobile image size: 220px width, 160px height. Margin: 20px. Total per image: 240px */
+    /* Mobile image size: 300px width, 210px height. Margin: 15px. Total per image: 315px */
     .image-track {
         /* (Mobile Image Width + Margin) * Number of TOTAL Images (14) */
-        width: calc((220px + 20px) * 14);
+        width: calc((300px + 15px) * 14); /* MODIFIED for new image width and margin */
     }
     .image-track img {
-        width: 220px;
-        height: 160px;
-        margin-right: 20px; /* Kept consistent for calculation simplicity with keyframes */
+        width: 300px;   /* MODIFIED */
+        height: 210px;  /* MODIFIED */
+        margin-right: 15px; /* MODIFIED: Slightly reduced margin for smaller screens */
     }
 }
