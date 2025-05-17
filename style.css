@@ -35,7 +35,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2.8rem; /* MODIFIED: Reduced */
+    font-size: 2.8rem;
     margin-bottom: 0.2em;
 }
 
@@ -85,30 +85,30 @@ a:hover {
 .hero {
     background: linear-gradient(135deg, var(--pastel-primary) 0%, var(--pastel-secondary) 100%);
     color: var(--heading-color);
-    padding: 30px 0;      /* MODIFIED: Drastically reduced from 50px */
+    padding: 30px 0;
     text-align: center;
-    min-height: 30vh;     /* MODIFIED: Reduced from 60vh, adjust as needed */
+    min-height: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .hero-logo {
-    max-width: 100px;     /* MODIFIED: Reduced from 150px */
-    margin-bottom: 15px;  /* MODIFIED: Reduced */
+    max-width: 100px;
+    margin-bottom: 15px;
 }
 
-.hero .sub-heading {
-    font-size: 1.5rem;    /* MODIFIED: Reduced */
+.hero .sub-heading { /* This class was in your original CSS but not used in HTML, keeping it for now */
+    font-size: 1.5rem;
     font-weight: 300;
-    margin-bottom: 0.8em; /* MODIFIED: Reduced */
+    margin-bottom: 0.8em;
     color: var(--text-color);
 }
 
 .hero .tagline {
-    font-size: 1rem;      /* MODIFIED: Reduced */
-    margin-bottom: 1.5em; /* MODIFIED: Reduced */
-    max-width: 500px;     /* MODIFIED: Reduced */
+    font-size: 1rem;
+    margin-bottom: 1.5em;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     color: var(--text-color);
@@ -117,11 +117,11 @@ a:hover {
 .cta-button {
     background-color: var(--pastel-accent);
     color: var(--white);
-    padding: 12px 25px; /* MODIFIED: Reduced */
+    padding: 12px 25px;
     border-radius: 50px; /* Pill shape */
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 0.9rem;  /* MODIFIED: Reduced */
+    font-size: 0.9rem;
     letter-spacing: 1px;
     box-shadow: var(--light-shadow);
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -139,41 +139,39 @@ a:hover {
     box-shadow: var(--strong-shadow);
 }
 
-/* --- Image Scroller Section --- */
+/* --- Image Scroller Section (UPDATED) --- */
 .image-scroller-section {
-    background-color: var(--white);
-    padding: 100px 0; /* MODIFIED: Increased for more vertical space */
-    overflow: hidden;
+    background-color: var(--white); /* Or var(--pastel-secondary) if you prefer */
+    padding: 60px 0; /* Adjust vertical padding as needed */
+    overflow: hidden; /* Crucial to hide the parts of the track outside the viewport */
 }
 
 .scroller-container {
     width: 100%;
-    max-width: none;
+    max-width: none; /* Allow the scroller to be wider than the page content container if necessary */
     margin: 0 auto;
 }
 
-/* IMPORTANT: Adjust these values based on your image count and desired sizes */
-/* Let's assume 5 original images, duplicated once for a total of 10 in the track */
-/* New desktop image width: 400px, margin-right: 20px. Total space per image: 420px */
+/* Desktop image settings: width: 400px, margin-right: 20px. Total space per image: 420px */
 .image-track {
     display: flex;
-    /* (Image Width + Margin) * Number of TOTAL Images (Originals + Duplicates) */
-    width: calc(420px * 10); /* MODIFIED: (400px + 20px) * 10 */
-    animation: scroll 40s linear infinite; /* MODIFIED: Adjusted duration slightly for larger scroll */
+    /* (Image Width + Margin) * Number of TOTAL Images (7 Originals + 7 Duplicates = 14) */
+    width: calc((400px + 20px) * 14);
+    animation: scroll 60s linear infinite; /* Adjust 60s to control speed */
 }
 
 .image-track img {
-    width: 400px;   /* MODIFIED: Significantly increased */
-    height: 300px;  /* MODIFIED: Significantly increased */
-    object-fit: cover;
-    margin-right: 20px;
+    width: 400px;   /* Desired width of each image on desktop */
+    height: 300px;  /* Desired height of each image on desktop */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    margin-right: 20px; /* Space between images */
     border-radius: 10px;
     box-shadow: var(--light-shadow);
     transition: transform 0.3s ease;
 }
 
 .image-track img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 @keyframes scroll {
@@ -181,13 +179,13 @@ a:hover {
         transform: translateX(0);
     }
     100% {
-        /* (Image Width + Margin) * Number of ORIGINAL Images */
-        transform: translateX(calc(-420px * 5)); /* MODIFIED: (400px + 20px) * 5 */
+        /* -(Image Width + Margin) * Number of ORIGINAL Images (7) */
+        transform: translateX(calc(-(400px + 20px) * 7));
     }
 }
 
 .scroller-container:hover .image-track {
-    animation-play-state: paused;
+    animation-play-state: paused; /* Pause scroll on hover over the container */
 }
 
 
@@ -348,13 +346,13 @@ footer .container {
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.2rem; /* MODIFIED: Adjusted */
+        font-size: 2.2rem;
     }
     .hero .sub-heading {
-        font-size: 1.3rem; /* MODIFIED: Adjusted */
+        font-size: 1.3rem;
     }
     .hero .tagline {
-        font-size: 0.9rem; /* MODIFIED: Adjusted */
+        font-size: 0.9rem;
     }
     h2 {
         font-size: 2rem;
@@ -365,31 +363,31 @@ footer .container {
 
     /* Tablet image size: 300px width, 220px height. Margin: 20px. Total per image: 320px */
     .image-track {
-        width: calc(320px * 10); /* MODIFIED: (300px + 20px) * 10 */
-        /* The @keyframes scroll will still use the desktop values (420px * 5).
-           This means the scroll distance is fixed. For a truly responsive animation,
-           you'd need separate @keyframes or use CSS variables. This setup will still scroll,
-           but the "end point" of the animation is based on desktop image sizes. */
+        /* (Tablet Image Width + Margin) * Number of TOTAL Images (14) */
+        width: calc((300px + 20px) * 14);
+        /* Note: @keyframes scroll animation distance is still based on desktop image sizes.
+           For a continuous scroll, this is usually acceptable.
+           If precise reset based on resized images is needed, more complex CSS/JS would be required. */
     }
     .image-track img {
-        width: 300px;   /* MODIFIED */
-        height: 220px;  /* MODIFIED */
+        width: 300px;
+        height: 220px;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.8rem; /* MODIFIED: Adjusted */
+        font-size: 1.8rem;
     }
     .hero {
         padding: 20px 0;
         min-height: 25vh;
     }
     .hero .sub-heading {
-        font-size: 1.1rem; /* MODIFIED: Adjusted */
+        font-size: 1.1rem;
     }
     .hero .tagline {
-        font-size: 0.8rem; /* MODIFIED: Adjusted */
+        font-size: 0.8rem;
     }
     .cta-button {
         padding: 10px 20px;
@@ -401,26 +399,12 @@ footer .container {
 
     /* Mobile image size: 220px width, 160px height. Margin: 20px. Total per image: 240px */
     .image-track {
-        width: calc(240px * 10); /* MODIFIED: (220px + 20px) * 10 */
+        /* (Mobile Image Width + Margin) * Number of TOTAL Images (14) */
+        width: calc((220px + 20px) * 14);
     }
     .image-track img {
-        width: 220px;   /* MODIFIED */
-        height: 160px;  /* MODIFIED */
-        margin-right: 15px; /* MODIFIED: Slightly reduced margin for smaller screens */
+        width: 220px;
+        height: 160px;
+        margin-right: 20px; /* Kept consistent for calculation simplicity with keyframes */
     }
-    /* Re-adjust the track width and animation if margin changes significantly for specific breakpoints */
-    /* If margin became 15px for mobile: (220px + 15px) * 10 for track width */
-    /* And if using separate keyframes: translateX(calc(-(220px + 15px) * 5)) */
-    /* For simplicity, I've kept margin at 20px in calc above but showed 15px in img style for demo */
-    /* Let's be consistent: if margin-right is 15px on mobile: */
-    /* .image-track { width: calc( (220px + 15px) * 10); } */
-    /* The @keyframes scroll transform would ideally also update for mobile, or accept that it
-       scrolls based on desktop calculations. For this example, we stick to one @keyframes.
-       If you want pixel-perfect responsive animation, you'll need more complex keyframes.
-    */
-    /* Let's revert mobile margin to 20px for consistency with the calc above for now */
-    .image-track img {
-         margin-right: 20px; /* Reverted to 20px for calc consistency */
-    }
-
 }
