@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shiurkar's Hillview Resort and Lawns - Elegant Event Venue</title>
+    <title>Shiurkar's Hillview Resort & Lawns - Elegant Event Venue</title>
+    <!-- Favicon Placeholder - Replace with your favicon.ico -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,18 +22,46 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
-            <h1>SHIURKAR'S</h1>
-            <p class="sub-heading">Hillview Resort and Lawns</p>
+        <div class="container hero-content">
+            <!-- Optional: You can place a simple SVG logo here or just style the text -->
+            <!-- <img src="images/logo-placeholder.svg" alt="Shiurkar's Logo" class="hero-logo"> -->
+            <h1>Shiurkar's Hillview Resort and Lawns</h1>
             <p class="tagline">Elevated events crafted to perfection. Join us for a memorable celebration experience.</p>
-            <!-- Updated Button: Text changed, href points to phone number -->
-            <a href="tel:+919021111143" class="cta-button">Contact Here</a>
+            <a href="tel:+919021111143" class="cta-button">
+                <i class="fas fa-phone-alt"></i> Contact Here
+            </a>
+        </div>
+    </section>
+
+    <!-- Image Scroller Section -->
+    <section class="image-scroller-section">
+        <div class="scroller-container">
+            <div class="image-track">
+                <!-- Add 5-10 images in your 'images' folder. Duplicate them for seamless scrolling -->
+                <!-- Example: if you have 5 images, list them twice -->
+                <img src="images/slider1.jpg" alt="Resort View 1">
+                <img src="images/slider2.jpg" alt="Event Setup 1">
+                <img src="images/slider3.jpg" alt="Lawn View">
+                <img src="images/slider4.jpg" alt="Resort Decor">
+                <img src="images/slider5.jpg" alt="Evening Event">
+                <img src="images/slider6.jpg" alt="Resort Decor1">
+                <img src="images/slider7.jpg" alt="Evening Event1">
+                <!-- Duplicate for seamless scroll -->
+                <img src="images/slider1.jpg" alt="Resort View 1">
+                <img src="images/slider2.jpg" alt="Event Setup 1">
+                <img src="images/slider3.jpg" alt="Lawn View">
+                <img src="images/slider4.jpg" alt="Resort Decor">
+                <img src="images/slider5.jpg" alt="Evening Event">
+                <img src="images/slider6.jpg" alt="Resort Decor1">
+                <img src="images/slider7.jpg" alt="Evening Event1">
+            </div>
         </div>
     </section>
 
     <!-- Introduction Section -->
     <section class="intro" id="about">
         <div class="container">
+            <h2><i class="fas fa-info-circle icon-left"></i>Discover Our Venue</h2>
             <p class="intro-quote">
                All you need for a perfect celebration is under one roof. We create experiences, not just events.
             </p>
@@ -33,14 +72,14 @@
     <!-- Services Section -->
     <section class="services" id="events">
         <div class="container">
-            <h2>We Host More Than Just Weddings</h2>
+            <h2><i class="fas fa-concierge-bell icon-left"></i>We Host More Than Just Weddings</h2>
             <ul class="service-list">
-                <li>Corporate Conferences & Seminars</li>
-                <li>Product Launches & Trade Shows</li>
-                <li>Award Ceremonies & Gala Nights</li>
-                <li>Birthday & Anniversary Celebrations</li>
-                <li>Engagements & Receptions</li>
-                <li>Social Gatherings & Festive Parties</li>
+                <li><i class="fas fa-briefcase"></i> Corporate Conferences & Seminars</li>
+                <li><i class="fas fa-rocket"></i> Product Launches & Trade Shows</li>
+                <li><i class="fas fa-award"></i> Award Ceremonies & Gala Nights</li>
+                <li><i class="fas fa-birthday-cake"></i> Birthday & Anniversary Celebrations</li>
+                <li><i class="fas fa-ring"></i> Engagements & Receptions</li>
+                <li><i class="fas fa-users"></i> Social Gatherings & Festive Parties</li>
             </ul>
         </div>
     </section>
@@ -48,64 +87,73 @@
     <!-- Facilities Section -->
     <section class="facilities" id="facilities">
         <div class="container">
-            <h2>Our Premier Facilities</h2>
+            <h2><i class="fas fa-building icon-left"></i>Our Premier Facilities</h2>
             <div class="facility-grid">
                 <div class="facility-item">
+                    <i class="fas fa-tree facility-icon"></i>
                     <h3>Expansive Lawn</h3>
                     <p>30,000 sq. ft. perfectly manicured space</p>
                 </div>
                 <div class="facility-item">
+                    <i class="fas fa-door-open facility-icon"></i>
                     <h3>Grand Reception Area</h3>
                     <p>60,000 sq. ft. for large gatherings</p>
                 </div>
                 <div class="facility-item">
+                    <i class="fas fa-theater-masks facility-icon"></i>
                     <h3>Ready Stage</h3>
                     <p>40 ft x 60 ft platform for performances</p>
                 </div>
                 <div class="facility-item">
+                    <i class="fas fa-bed facility-icon"></i>
                     <h3>Furnished Rooms & Hall</h3>
                     <p>4 Bedrooms & 1000 sq. ft. Hall</p>
                 </div>
                  <div class="facility-item">
+                    <i class="fas fa-utensils facility-icon"></i>
                     <h3>Dedicated Kitchen Shed</h3>
                     <p>2000 sq. ft. for catering preparations</p>
                 </div>
                 <div class="facility-item">
+                    <i class="fas fa-parking facility-icon"></i>
                     <h3>Ample Parking</h3>
                     <p>Huge, convenient parking space</p>
                 </div>
                  <div class="facility-item">
+                    <i class="fas fa-restroom facility-icon"></i>
                     <h3>Modern Amenities</h3>
-                    <p>Separate & clean Toilets & Bathrooms (Ladies & Gents)</p>
+                    <p>Separate & clean Toilets & Bathrooms</p>
                 </div>
             </div>
         </div>
     </section>
 
      <!-- Final Call to Action Section -->
-    <section class="final-cta" id="contact">
+    <section class="final-cta" id="contact-cta">
         <div class="container">
              <h2>Ready to Create Your Perfect Event?</h2>
              <p style="margin-bottom: 2em;">Let us help you craft an unforgettable experience at Shiurkar's Hillview.</p>
-             <!-- Updated Button: Text changed, href points to phone number -->
-            <a href="tel:+919021111143" class="cta-button">Call Us Now</a>
-             <!-- Removed paragraph about email/phone instructions -->
+            <a href="tel:+919021111143" class="cta-button">
+                <i class="fas fa-phone-volume"></i> Call Us Now
+            </a>
         </div>
     </section>
 
     <!-- Location Section -->
-    <section class="location" id="location">
+    <section class="location" id="contact"> <!-- Changed ID to contact for clarity -->
         <div class="container">
-            <h2>Visit Us / Contact</h2>
-            <!-- Updated Address: Full details including Pin Code & linked Phone Number -->
-            <p>
-                <strong>Shiurkar's Hillview Resort and Lawns</strong><br>
-                Gut No. 292, Near Hotel Jagatraj, <br>
-                Near Srpf Camp, Solapur Highway,<br>
-                Solapur, Maharashtra - 413005 <br><br>
-                <strong>Phone:</strong> <a href="tel:+919021111143">+91 9021111143</a>
-            </p>
-             <!-- Optional: You could embed a Google Map here later -->
+            <h2><i class="fas fa-map-marker-alt icon-left"></i>Visit Us / Contact</h2>
+            <div class="contact-details">
+                <p>
+                    <strong>Shiurkar's Hillview Resort and Lawns</strong><br>
+                    Gut No. 292, Near Hotel Jagatraj, <br>
+                    Near Srpf Camp, Solapur Highway,<br>
+                    Solapur, Maharashtra - 413005 <br><br>
+                    <strong><i class="fas fa-phone"></i> Phone:</strong> <a href="tel:+919021111143">+91 9021111143</a>
+                </p>
+                 <!-- Optional: You could embed a Google Map here later -->
+                 <!-- <div class="map-placeholder">Google Map Goes Here</div> -->
+            </div>
         </div>
     </section>
 
@@ -113,12 +161,13 @@
     <footer>
         <div class="container">
             <p>© 2024 Shiurkar's Hillview Resort and Lawns. All Rights Reserved.</p>
-             <!-- Added Instagram Link/Logo -->
              <div class="social-links">
-                 <a href="https://www.instagram.com/shiurkar_resorts_and_lawns/profilecard/?igsh=MW9na3U4bm9rdHo3Zg==" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile">
-                    <!-- Embedded Instagram SVG Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                 <a href="https://www.instagram.com/shiurkar_resorts_and_lawns/profilecard/?igsh=MW9na3U4bm9rdHo3Zg==" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram profile" class="social-icon">
+                    <i class="fab fa-instagram"></i>
                  </a>
+                 <!-- Add more social links here if needed -->
+                 <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a> -->
+                 <!-- <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a> -->
              </div>
         </div>
     </footer>
